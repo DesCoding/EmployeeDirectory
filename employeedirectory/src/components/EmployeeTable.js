@@ -4,6 +4,11 @@ import API from "../utils/API";
 import EmployeeRow from "./EmployeeRow";
 
 function EmployeeTable() {
+  const [employeeState, setEmployeeState] = useState([
+    "Desire",
+    "Anna",
+    "Tony",
+  ]);
   useEffect(() => {
     loadEmployeeTable();
   }, []);
@@ -31,8 +36,9 @@ function EmployeeTable() {
         </tr>
       </thead>
       <tbody>
-        <EmployeeRow />
-        <EmployeeRow />
+        {employeeState.map((name) => (
+          <EmployeeRow userName={name} />
+        ))}
       </tbody>
     </Table>
   );

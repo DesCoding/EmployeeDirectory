@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
-function EmployeeRow() {
+function EmployeeRow(props) {
   return (
     <tr>
       <td>1</td>
-      <td>Mark</td>
+      <td>{props.userName}</td>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
