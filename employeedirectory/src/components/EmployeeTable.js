@@ -1,7 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
+import API from "../utils/API";
 
 function EmployeeTable() {
+  useEffect(() => {
+    loadEmployeeTable();
+  }, []);
+
+  const loadEmployeeTable = () => {
+    API.getRandomEmployee()
+      .then((res) =>
+        // this.setState({
+        //   image: res.data.message,
+        // })
+        console.log(res)
+      )
+      .catch((err) => console.log(err));
+  };
+
   return (
     <Table striped bordered hover>
       <thead>
@@ -27,7 +43,7 @@ function EmployeeTable() {
         </tr>
         <tr>
           <td>3</td>
-          <td colSpan="2">Larry the Bird</td>
+          <td>Larry the Bird</td>
           <td>@twitter</td>
         </tr>
       </tbody>
