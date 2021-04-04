@@ -4,11 +4,7 @@ import API from "../utils/API";
 import EmployeeRow from "./EmployeeRow";
 
 function EmployeeTable() {
-  const [employeeState, setEmployeeState] = useState([
-    "Desire",
-    "Anna",
-    "Tony",
-  ]);
+  const [employeeState, setEmployeeState] = useState([]);
   useEffect(() => {
     loadEmployeeTable();
   }, []);
@@ -23,7 +19,6 @@ function EmployeeTable() {
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>Employee ID</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Picture</th>
@@ -34,7 +29,12 @@ function EmployeeTable() {
         {console.log(employeeState)}
         {employeeState.length > 3 &&
           employeeState.map((employee) => (
-            <EmployeeRow userName={employee.name.first} />
+            <EmployeeRow
+              employeeLastName={employee.name.last}
+              userName={employee.name.first}
+              employeePicture={employee.picture.thumbnail}
+              employeeEmail={employee.email}
+            />
           ))}
       </tbody>
     </Table>
