@@ -15,12 +15,7 @@ function EmployeeTable() {
 
   const loadEmployeeTable = () => {
     API.getRandomEmployee()
-      .then((res) =>
-        // this.setState({
-        //   image: res.data.message,
-        // })
-        console.log(res)
-      )
+      .then((res) => setEmployeeState(res.data.results))
       .catch((err) => console.log(err));
   };
 
@@ -36,9 +31,11 @@ function EmployeeTable() {
         </tr>
       </thead>
       <tbody>
-        {employeeState.map((name) => (
-          <EmployeeRow userName={name} />
-        ))}
+        {console.log(employeeState)}
+        {employeeState.length > 3 &&
+          employeeState.map((employee) => (
+            <EmployeeRow userName={employee.name.first} />
+          ))}
       </tbody>
     </Table>
   );
