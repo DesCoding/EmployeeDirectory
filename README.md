@@ -1,4 +1,4 @@
-![]https://media.tenor.com/images/65a7abd55fc7669dc438b01b27dc9009/tenor.gif
+![](https://media.tenor.com/images/65a7abd55fc7669dc438b01b27dc9009/tenor.gif)
 
 # EmployeeDirectory
 Use this React app to quickly view an entire employee directory at once.  Sort by department and filter by employee name.
