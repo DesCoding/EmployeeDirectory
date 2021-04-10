@@ -5,7 +5,9 @@ function EmployeeRow(props) {
     <tr>
       <td>{props.userName}</td>
       <td>{props.employeeLastName}</td>
-      <td>{props.employeePicture}</td>
+      <td>
+        <img src={props.employeePicture} />
+      </td>
       <td>{props.employeeEmail}</td>
     </tr>
   );
