@@ -5,7 +5,7 @@ import EmployeeRow from "./EmployeeRow";
 import Nav from "./Nav";
 
 function EmployeeTable() {
-  const [employeeState, setEmployeeState] = useState([]);
+  const [employeeState, setEmployeeState] = useState("start");
   const [searchState, setSearchState] = useState([]);
   useEffect(() => {
     loadEmployeeTable();
@@ -21,10 +21,24 @@ function EmployeeTable() {
     setSearchState(event.target.value);
   };
 
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    {
+      console.log(searchState);
+    }
+    const searchName = employeeState.filter((employee) =>
+      employee.name.first.includes(searchState)
+    );
+    setEmployeeState(searchName);
+    console.log(searchName);
+  };
+
   return (
     <>
-      {console.log(searchState)}
-      <Nav handleInputChange={handleInputChange} />
+      <Nav
+        handleInputChange={handleInputChange}
+        handleFormSubmit={handleFormSubmit}
+      />
       <Table striped>
         <thead>
           <tr>
@@ -36,7 +50,7 @@ function EmployeeTable() {
         </thead>
         <tbody>
           {console.log(employeeState)}
-          {employeeState.length > 3 &&
+          {employeeState != "start" &&
             employeeState.map((employee) => (
               <EmployeeRow
                 employeeLastName={employee.name.last}
