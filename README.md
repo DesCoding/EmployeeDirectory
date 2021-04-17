@@ -16,7 +16,7 @@ Use this React app to quickly view an entire employee directory at once.  Sort e
 
 # Demo
 
-![Demo]employeedirectory/assets/demo.png)
+![Demo](employeedirectory/assets/demo.png)
 
 # MIT License
 
