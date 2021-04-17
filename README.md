@@ -43,7 +43,3 @@ Use this React app to quickly view an entire employee directory at once.  Sort e
 # Contact Info
 
 d.stout31@yahoo.com
-
-
-
-
