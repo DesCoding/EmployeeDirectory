@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
-import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
 
@@ -17,6 +16,9 @@ function Nav(props) {
         />
         <Button type="submit" onClick={props.handleFormSubmit}>
           Submit
+        </Button>
+        <Button type="submit" onClick={props.handleFormSort}>
+          Sort
         </Button>
       </Form>
     </Navbar>
